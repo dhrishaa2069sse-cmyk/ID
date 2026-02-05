@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIMATS Transports ID</title>
+
     <style>
         * { box-sizing: border-box; }
 
@@ -52,29 +53,37 @@
         }
     </style>
 </head>
+
 <body>
-    <div class="id-card">
-        <img src="https://raw.githubusercontent.com/SONA0095/sona/f65995a7ffe6ef1aeaab68f9fcdabb937ec3f583/top%20image.png" alt="Top Image" class="top-image">
 
+<div class="id-card">
 
+    <img src="https://raw.githubusercontent.com/SONA0095/sona/f65995a7ffe6ef1aeaab68f9fcdabb937ec3f583/top%20image.png"
+         alt="Top Image"
+         class="top-image">
 
-        <div class="date-time" id="dateTime"></div>
-        <div class="valid">VALID</div>
+    <!-- LIVE DATE & TIME -->
+    <div class="date-time" id="dateTime"></div>
 
-        <img src="https://raw.githubusercontent.com/dhrishaa2069sse-cmyk/ID/main/image.jpg" alt="Image" />
+    <div class="valid">VALID</div>
 
-           <div class="info">
-           <p>Dhrisha A</p>
-           <p>192222069</p>
-        </div>
+    <img src="https://raw.githubusercontent.com/dhrishaa2069sse-cmyk/ID/main/image.jpg"
+         alt="ID Photo"
+         class="photo">
 
-        <div class="location">ANNA NAGAR-II 15A</div>
-
-        <img src="https://raw.githubusercontent.com/Kasthuribharathi/Image/main/transport-2.jpg" alt="Bottom Image" class="bottom-image">
+    <div class="info">
+        <p>Dhrisha A</p>
+        <p>192222069</p>
     </div>
 
-  
-    <script>
+    <div class="location">ANNA NAGAR-II 15A</div>
+
+    <img src="https://raw.githubusercontent.com/Kasthuribharathi/Image/main/transport-2.jpg"
+         alt="Bottom Image"
+         class="bottom-image">
+</div>
+
+<script>
 function updateDateTime() {
     const now = new Date();
 
@@ -87,16 +96,16 @@ function updateDateTime() {
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
 
-    const dateTimeString = ${day}-${month}-${year} ${hours}:${minutes}:${seconds};
+    // ✅ FIXED LINE (template literal)
+    const dateTimeString = `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
 
     document.getElementById("dateTime").textContent = dateTimeString;
 }
 
+// update every second
 setInterval(updateDateTime, 1000);
 updateDateTime();
 </script>
 
-
 </body>
-
 </html>
