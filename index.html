@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMATS Transports ID</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .id-card {
+            width: 300px;
+            margin: 20px auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .top-image,
+        .bottom-image,
+        .photo {
+            width: 300px;
+            height: auto;
+        }
+
+        .date-time,
+        .valid,
+        .location {
+            background: #28a745;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+        .valid {
+            font-size: 18px;
+        }
+
+        .info {
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="id-card">
+        <img src="https://raw.githubusercontent.com/SONA0095/sona/f65995a7ffe6ef1aeaab68f9fcdabb937ec3f583/top%20image.png" alt="Top Image" class="top-image">
+
+
+
+        <div class="date-time" id="dateTime"></div>
+        <div class="valid">VALID</div>
+
+        <img src="https://raw.githubusercontent.com/dhrishaa2069sse-cmyk/ID/main/image.jpg" alt="Image" />
+
+           <div class="info">
+           <p>Dhrisha A</p>
+           <p>192222069</p>
+        </div>
+
+        <div class="location">ANNA NAGAR-II 15A</div>
+
+        <img src="https://raw.githubusercontent.com/Kasthuribharathi/Image/main/transport-2.jpg" alt="Bottom Image" class="bottom-image">
+    </div>
+
+  
+    <script>
+function updateDateTime() {
+    const now = new Date();
+
+    const day = String(now.getDate()).padStart(2, '0');
+    const monthNames = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+    const month = monthNames[now.getMonth()];
+    const year = now.getFullYear();
+
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+
+    const dateTimeString = ${day}-${month}-${year} ${hours}:${minutes}:${seconds};
+
+    document.getElementById("dateTime").textContent = dateTimeString;
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+
+
+</body>
+
+</html>
